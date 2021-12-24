@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+
+{% load static from static %}
+{% block content %}
+
+
+<link href="{% static 'carousel.css' %}" rel="stylesheet">
+<header>
+    <nav style="background-color: #000000;" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Oslo United Company</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#WHYSHOPWITHUS">Why shop with us?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#FINDUS" tabindex="-1" aria-disabled="true">Find us!</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+    {% if success_message %}
+      <div style="position: fixed; top:70px; z-index:10; width:100%;">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <center><strong>Added to Email list!</strong> Your email has been added to our email list.</center>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    {% endif %}
+
+
+    <main>
+
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="bd-placeholder-img" width="100%" height="100%" style="filter: brightness(70%);" src="{% static 'images/L6.jpg' %}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+    
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Choose the right tryes!</h1>
+                <p>choose from a large range of tyre brands!</p>
+                <p><a class="btn btn-lg btn-danger" href="{% url 'catelogueapp:category'%}">Browse Catalogue</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%"  style="filter: brightness(70%);" src="{% static 'images/L4.jpg' %}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+    
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Make Payments <span class="text-danger">Online</span></h1>
+                <p>You can make payments through the website's paystack now!</p>
+                <p><a class="btn btn-lg btn-danger" href="{% url 'catelogueapp:category'%}">Browse Catalogue</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="bd-placeholder-img" width="100%" height="100%" style="filter: brightness(70%);" src="{% static 'images/L6.jfif' %}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+    
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Deliveries</h1>
+                <p>We can deliver to your doorstep or you can pick up at our location !</p>
+                <p><a class="btn btn-lg btn-danger" href="#FINDUS">See location</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    
+    
+      <!-- end of moving parts muh fucker
+      ================================================== -->
+      <!-- welcome to the gallery mfs-->
+    
+    <!-- Gallery -->
+    <section class="text-center p-5"><H1><strong>Our products</strong></H1>
+
+
+
+    <div class="row">
+      <div class="col-lg-4">
+        <a href="https://oslounitedcompany.com/catelogue/product/agricultural-tyres-otr20" style="text-decoration: none;">
+        <img
+        src="https://tyre-project.s3.amazonaws.com/oslounitedcompany/p9_lysL138.jpg"
+        class="col-6 w-100 shadow-1-strong rounded mb-4"
+        alt=""
+        height="300"
+        style="filter: brightness(70%);"
+      />
+        <div style="filter: brightness(100%); font-size: 30px; margin-top:-120px; margin-bottom:120px; color:#ffffff;">Agricultural Tyres</div>
+      </a>
+
+      <a href="https://oslounitedcompany.com/catelogue/product/solid-tyres2" style="text-decoration: none;">
+        <img
+          src="https://tyre-project.s3.amazonaws.com/oslounitedcompany/solid.jpg"
+          class="col-6 w-100 shadow-1-strong rounded mb-4"
+          alt=""
+          height="300"
+          style="filter: brightness(70%);"
+        />
+        <div style="filter: brightness(100%); font-size: 30px; margin-top:-120px; margin-bottom:120px; color:#ffffff;">Solid Tyres</div>
+        </a>
+
+
+      </div>
+    
+      <div class="col-lg-4">
+        <a href="https://oslounitedcompany.com/catelogue/product/construction-tyres4" style="text-decoration: none;">
+        <img
+          src="https://tyre-project.s3.amazonaws.com/oslounitedcompany/CONSTRUCTION_2.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt=""
+          height="300"
+          style="filter: brightness(70%);"
+        />
+        <span></span>
+        <div style="filter: brightness(100%); font-size: 30px; margin-top:-120px; margin-bottom:120px; color:#ffffff;">Construction Tyres</div>
+        </a>
+                     
+
+        <a href="https://oslounitedcompany.com/catelogue/product/truck-tyres-tbr6" style="text-decoration: none;">
+        <img
+          src="https://tyre-project.s3.amazonaws.com/oslounitedcompany/Truck-Tyres_1.jpg"
+          class="w-100 shadow-1-strong rounded mb-4 "
+          alt=""
+          height="300"
+          style="filter: brightness(70%);"
+        />
+        <div style="filter: brightness(100%); font-size: 30px; margin-top:-120px; margin-bottom:120px; color:#ffffff;">Truck Tyres</div>
+        </a>
+
+
+      </div>
+
+
+      <div class="col-lg-4">
+    
+        <a href="https://oslounitedcompany.com/catelogue/product/car-tyres-pcr21" style="text-decoration: none;">
+        <img
+          src="https://tyre-project.s3.amazonaws.com/oslounitedcompany/ghj.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt=""
+          height="300"
+          style="filter: brightness(70%);"
+        />
+        <div style="filter: brightness(100%); font-size: 30px; margin-top:-120px; margin-bottom:120px; color:#ffffff;">Car Tyres</div>
+        </a>
+
+
+      </div>
+    </div>
+    </section>
+    
+        <section class="text-center p-5">
+          <a class="btn btn-lg btn-danger" href="{% url 'catelogueapp:category'%}">Browse Catalogue</a>
+      </section>
+    
+    
+    
+    
+    
+      </div>
+    
+       <!--newsletter section .input and subscribe-->
+       <section class="bg-dark text-light p-5">
+        <form method="post" enctype="multipart/form-data">{%csrf_token%}
+          <div class="container">
+              <div class="d-md-flex justify-content-between align-item-center">
+                  <h3 class="mb-3 mb-md-0">Insert your email to get more information on tyres!</h3>
+      
+                  <div class="input-group news-input">
+                      <input type="email" name="email" class="form-control" placeholder="Insert Email"required>
+                      <button class="btn btn-danger btn-lg" type="submit" >Lets Go</button>
+                    </div>
+      
+              </div>
+           </div>
+           </form>
+    
+    
+    </section>
+    
+  
+  
+  
+  <div id="WHYSHOPWITHUS"class="container marketing p-5">
+     <container class="p-5">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h1 class="featurette-heading"><strong>WHY SHOP WITH US ? </strong></h1>
+         <h3><span class=" text-danger">Simply, we are the best!!</span></h3>
+      <p class="lead">Our Global partnerships with industry leaders ensures that our products meet the demands of a constantly evolving market. As a result, our portfolio includes unique solutions for all challenges and opportunities in the automotive industry.
+  
+        Our portfolio of Off Highway tyres serve the needs of Material Handling, Industrial, Agriculture, Implement, Construction & Mining, Heavy Industry, Airports and Seaports.
+        
+        Our unique business model, a passion for reliability, unrivaled customer service, and an enduring loyalty to our clients make Oslo United Company the preferred partner for customers nation-wide</p>
+    </div>
+    <div class="col-md-5">
+      <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src="{% static 'images/ph (1).jpeg' %}" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></text></svg>
+  
+    </div>
+  </div>
+  </container>
+  </section>
+  <hr class="featurette-divider">
+  </div>
+  
+  
+  
+  
+  <div class="container marketing ">
+  
+  
+
+          <!--contact info-->
+          <div id="FINDUS" class="section p-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md">
+                        <div class="h2 text-center mb-4"> FIND US NOW</div>
+                        <ul class="list-group list-group-flush lead">
+                            <li class="list-group-item">
+                                <span class="fw-bold">ADRESS:</span>  NO. 34, Enuowa street, Idumota, Lagos.
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">PHONE:</span>  +(234)8033023060
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">COUNTRY:</span>  Nigeria
+                            </li>
+                            <li class="list-group-item">
+                                <span class="fw-bold">EMAIL:</span>  bigstonetyre@yahoo.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+  
+  
+  
+    </div><!-- /.container -->
+
+  
+  
+  {% endblock%}

@@ -1,0 +1,73 @@
+{% load static from static %}
+
+<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="BENGZ">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Oslo United Company</title>
+    <meta property="description" content="Dealers of all kind of tyres including  solid tyres, truck tyres and car tyres"/>
+    <meta property="og:sitename" content="Oslo United Company"/>
+    <meta property="og:title" content="Oslo United Company"/>
+    <meta property="og:description" content="Dealers of all kind of tyres including  solid tyres, truck tyres and car tyre"/>
+    <meta property="og:image" content="{% static 'assets/favicon.ico' %}"/>
+    <meta name="google-site-verification" content="0UvLtO_tC8Kha18GC9tdL8xPoO-unVpSK5q0kMqStFQ" />
+
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .btn-danger{
+        background-color: #F44336;
+      }
+      .bg-dark{
+        background-color: #fed136;
+      }
+      .navbar-dark{
+        background-color: #fed136;
+
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+  </head>
+  <body>
+    
+    {% block content %}
+
+    {% endblock %}
+
+
+  <!--footer boss man i guess this is the end ladies and gents -->
+  <footer class="p-5 bg-dark text-white text-center position-relative">
+    <div class="container">
+        <p class="lead">Copyright &copy; Oslo Company United  </p>
+        <a href="" class="postion-absolute bottom-0 end-0 p-5"> 
+         <i class="bi bi-arrow-up-circle h6">BACK TO THE TOP</i>
+        </a>
+      </div>
+    </footer>
+
+    <script src="{% static 'assets/dist/js/bootstrap.bundle.min.js' %}"></script>    
+  </body>
+</html>

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static from static %}
+{% block content %}
+
+
+<link href="{% static 'heroes.css' %}" rel="stylesheet">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Oslo United Company</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              {% if request.user.is_authenticated %}
+                  <a class="nav-link active" aria="page" href="/catelogue/add/category">Add category</a>
+              {% else %}
+              <a class="nav-link active" aria="page" href="/"> Back to Home!</a>
+              {% endif %}
+  
+            </li>
+            
+          </ul>
+          
+          <form class="d-flex">
+            {% if request.user.is_authenticated %}
+                <span class="m-auto" style="color:#ffffff;">Hello, {{request.user.username}}</span> 
+            <a class="nav-link active" aria="page" href="/logout"> Logout</a>
+
+            {% else %}
+                <a class="nav-link active" aria="page" href="/login"> Login</a>
+            {% endif %}
+
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+
+<div class="b-example-divider"></div>
+
+
+{% for post in catelogue %}
+      <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+          <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+            <h1 class="display-4 fw-bold lh-1">{{post.title}}</h1>
+            <p class="lead">{{post.body}}</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+              <a class="btn btn-lg btn-danger" href="{% url 'catelogueapp:product' post.slug %}">Shop Now!</a>
+            </div>
+            {% if request.user.is_authenticated %}
+                <a class="btn btn-lg btn-secondary" href="{% url 'catelogueapp:editCategory' post.slug %}">Edit</a>
+            {% endif %}
+          </div>
+          <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+              <img class="rounded-lg-3" src="{{post.thumb.url}}" alt="" width="520" height="600">
+          </div>
+        </div>
+      </div>
+
+      <div class="b-example-divider"></div>
+{% endfor %}
+
+
+<div style="margin-top: 30px;"></div>
+  {% endblock%}

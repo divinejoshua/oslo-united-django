@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<style type="text/css">
+  .create-form {
+	    width: 100%;
+	    max-width: 100%;
+	    padding: 15px;
+	    margin: auto;
+  	}
+
+  	.submit-button{
+  		max-width: 200px;
+  	}
+</style>
+<div class="container" style="margin-top: 100px;">
+	<div class="row">
+		<div class="">
+			<h1>Add a new category</h1>
+			<p>Logged in as <b>{{request.user.username}}</b></p>
+			<form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+				<!-- title -->
+				<div class="form-group mt-2 mb-4">
+					<label for="id_title" class="mb-2"><b>Category Title</b></label>
+					<input class="form-control" type="text" name="title" id="id_title" placeholder="Title" required autofocus>
+				</div>
+
+				<!-- Body -->
+				<div class="form-group mt-4 mb-4">
+					<label for="id_body" class="mb-2"><b>Description</b></label>
+					<textarea class="form-control" rows="10" type="text" name="body" id="id_body" placeholder="This blog is about..." required></textarea>
+				</div>
+
+				<!-- Image -->
+				<div class="form-group mt-4 mb-4">
+					<label for="id_image"  class="mb-2"><b>Image</b></label><br>
+					<input  type="file" name="thumb" id="id_image" accept="image/*" required>
+				</div>
+				<div class="text-danger mt-2">{{ error }}</div>	
+				<!-- Submit btn -->
+				<button class="submit-button btn btn-lg btn-primary btn-block" type="submit">POST</button>
+			</form>	
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock content %}
